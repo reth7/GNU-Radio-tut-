@@ -35,7 +35,44 @@ To see the available UHD devices:
 ```bash 
 uhd_find_devices
 ```
-To see the available connections 
+ifconfig (interface configuration) command is used to configure the kernel-resident network interfaces
 ```bash
 ifconfig
+```
+To find the available connected USRP devices:  
+```bash
+uhd_usrp_probe
+```
+To list all the available wireless networks
+To list all the available wireless networks using a custom device(USRP) using a USRP device ID (enp03 in this case)
+```bash
+iwlist
+```
+In my system, running above command shows `enp0s3` device
+
+```bash
+iwlist enp0s3 scan
+```
+
+## Ethtool
+The ethtool is a command-line tool in Linux for managing network interface devices. It allows us to modify the parameters of the devices and query the information of those devices.
+
+```bash
+sudo apt-get install -y ethtool
+```
+To get the general properties of a network interface device, we simply run ethtool followed by its name:
+
+
+```
+sudo ethtool enp0s3
+```
+
+```
+Settings for enp0s3:
+	Supported ports: [ TP ]
+	Supported link modes:   10baseT/Half 10baseT/Full 
+	                        100baseT/Half 100baseT/Full 
+	                        1000baseT/Full 
+	Supported pause frame use: No
+	...
 ```
