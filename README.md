@@ -54,6 +54,7 @@ In my system, running above command shows `enp0s3` device
 iwlist enp0s3 scan
 ```
 
+
 ## Ethtool
 The ethtool is a command-line tool in Linux for managing network interface devices. It allows us to modify the parameters of the devices and query the information of those devices.
 
